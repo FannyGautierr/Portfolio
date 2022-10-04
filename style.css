@@ -11,6 +11,7 @@
 }
 
 nav {
+  position: static;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,5 +94,123 @@ nav ul {
   grid-column: 2;
   font-family: Avenir;
   font-size: 16px;
+}
+
+#MyProjects .navProjet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+#MyProjects .navProjet h2 {
+  font-family: Grotesk;
+  font-size: 25px;
+}
+
+#MyProjects .navProjet img {
+  margin: 10px;
+}
+
+#MyProjects .CardProjet {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.2fr 0.2fr 0.4fr 0.4fr;
+      grid-template-rows: 0.2fr 0.2fr 0.4fr 0.4fr;
+  -ms-grid-columns: 0.5fr 0.5fr 0.1fr;
+      grid-template-columns: 0.5fr 0.5fr 0.1fr;
+  font-family: Avenir;
+  font-size: 16px;
+  margin: 173px;
+  border-radius: 1.25rem;
+  background-color: whitesmoke;
+  padding: 50px;
+}
+
+#MyProjects .CardProjet h2 {
+  font-family: Grotesk;
+  font-size: 20px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  justify-items: center;
+}
+
+#MyProjects .CardProjet H3 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+#MyProjects .CardProjet p {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
+#MyProjects .CardProjet .Gallerie {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 4;
+  grid-row: 4/4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  gap: 50px;
+}
+
+#MyProjects .CardProjet .Gallerie img {
+  width: 40%;
+  border-radius: 1.25rem;
+}
+
+#MyProjects .CardProjet .button {
+  padding: 20px;
+  width: 74px;
+  height: 74px;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  border-radius: 50%;
+  border-style: none;
+  font-family: Avenir;
+  font-size: 28px;
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */
