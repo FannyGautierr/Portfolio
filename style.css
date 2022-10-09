@@ -4,6 +4,8 @@
 }
 html {
   scroll-behavior: smooth;
+  -ms-scroll-snap-type: mandatory;
+      scroll-snap-type: mandatory;
   transition: 2s ease-in-out;
 }
 
@@ -29,6 +31,7 @@ nav h1 {
   justify-content: flex-start;
   font-family: Grotesk;
   font-size: 35px;
+  color: #EF4142;
 }
 nav ul {
   display: flex;
