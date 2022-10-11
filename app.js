@@ -1,44 +1,33 @@
 "use strict"
+// Select in project -> display the projects 
 
-let NavBar=document.querySelector("nav");
-let body=document.querySelector("body");
-let SectionAboutMe=document.querySelector("#AboutMe");
+let dropDownSelect =document.querySelector("#select-lang")
+let searchButton=document.querySelector(".search-button")
 
-document.addEventListener("scroll",function(){
-
-    var intElemScrollTop = SectionAboutMe.scrollTop;
-    console.log(intElemScrollTop);
-
-})
-
-let javaScriptProject=document.querySelectorAll(".js");
-let htmlProject=document.querySelectorAll(".html");
-let phpProject=document.querySelectorAll(".php");
-
-let buttonJavaScript=document.querySelector(".javaScript-button")
-let buttonPhp=document.querySelector(".php-button")
-let buttonHtml=document.querySelector(".html-button")
 // Input -> un DOm object 
 //Sort -> dom event (display none)
-function  TriProjet(Programm,choosenprogramm){
-   console.log(Programm,choosenprogramm)
-Programm.forEach(e => {
-    if(e.classList.contains(choosenprogramm)){
+function  TriProjet(Programm){   
+    let Project=document.querySelectorAll(".CardProjet");    
+Project.forEach(e => {
+    if(!e.classList.contains(Programm)){
         e.style.display="none";
-        }
+    }else{
+        e.style.display="grid";
+    }
 });   
 
 }
 
-
-buttonJavaScript.addEventListener("click",() => {
-    TriProjet(javaScriptProject,"js");
+// add event listener 
+searchButton.addEventListener("click",() => {
+    let choosenprogramm=dropDownSelect.value
+    TriProjet(choosenprogramm);
 })
 
-buttonPhp.addEventListener("click",() => {
-    TriProjet(phpProject,"php");
-})
+//menu burger
 
-buttonHtml.addEventListener("click",() => {
-    TriProjet(htmlProject,"html");
-})
+let menuBurger = document.querySelector(".burgermenu");
+function displayBurgerMenu(){
+    
+}
+
