@@ -3,6 +3,42 @@
   font-family: Grotesk;
   src: url(fonts/DTGetaiGroteskDisplay-Black.otf);
 }
+@-webkit-keyframes animationBurgerFirst {
+  100% {
+    transform: translateY(10px) rotate(45deg);
+  }
+}
+@keyframes animationBurgerFirst {
+  100% {
+    transform: translateY(10px) rotate(45deg);
+  }
+}
+@-webkit-keyframes animationBurgerSecond {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes animationBurgerSecond {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes animationBurgerThree {
+  100% {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+@keyframes animationBurgerThree {
+  100% {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
 html {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: mandatory;
@@ -49,72 +85,175 @@ nav ul a {
   color: black;
 }
 
-.burgermenu-icon {
-  position: absolute;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: blue;
-  padding: 20px;
-  z-index: 2;
-}
-.burgermenu-icon .burgermenu-bar {
-  position: relative;
-  height: 2px;
-  width: 25px;
-  background-color: black;
-  margin: 5px;
-}
-
+/*Classe ajouter en JS*/
 .responsive-menu-container {
-  position: relative;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: 500px;
-  background-color: #EF4142;
+  height: 900px;
+  background-color: rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 900px) {
+  .responsive-menu-container {
+    display: grid;
+  }
 }
 .responsive-menu-container ul {
   list-style: none;
   font-family: Grotesk;
   font-size: 40px;
 }
+.responsive-menu-container .burgermenu-icon {
+  grid-row: 1;
+  grid-column: 3;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  margin-top: -20px;
+  z-index: 2;
+  display: none;
+}
+.responsive-menu-container .burgermenu-icon .burgermenu-bar {
+  position: relative;
+  height: 4px;
+  width: 25px;
+  background-color: black;
+  margin: 5px;
+}
+.responsive-menu-container .burgermenu-icon .animation-une {
+  -webkit-animation: animationBurgerFirst 1s forwards;
+          animation: animationBurgerFirst 1s forwards;
+}
+.responsive-menu-container .burgermenu-icon .animation-deux {
+  -webkit-animation: animationBurgerSecond 1s forwards;
+          animation: animationBurgerSecond 1s forwards;
+}
+.responsive-menu-container .burgermenu-icon .animation-trois {
+  -webkit-animation: animationBurgerThree 1s forwards;
+          animation: animationBurgerThree 1s forwards;
+}
+.responsive-menu-container .responsive-menu {
+  grid-column: 2;
+  /*display: flex;*/
+  display: none;
+  flex-direction: column;
+  gap: 50px;
+}
+.responsive-menu-container .display-flex {
+  display: flex;
+}
+@media screen and (max-width: 900px) {
+  .responsive-menu-container {
+    gap: 50px;
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+  }
+  .responsive-menu-container ul {
+    z-index: 4;
+    padding: 50px;
+  }
+  .responsive-menu-container .burgermenu-icon {
+    display: block;
+    margin-left: 50px;
+    z-index: 3;
+    width: 100%;
+  }
+}
+
+.red-background {
+  background-color: #EF4142;
+}
 
 #AboutMe {
   display: grid;
-  grid-template-columns: 0.1fr 0.1fr;
-  grid-template-rows: 0.2fr 0.5fr 0.5fr;
-  margin: 10px;
-  padding: 10px;
+  margin: 0 auto;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 0.4fr 1fr 0.5fr;
+  margin-top: 40px;
+  padding: 0px;
   width: 60%;
+}
+@media screen and (max-width: 900px) {
+  #AboutMe {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
 #AboutMe div {
   grid-row: 1/3;
+  grid-column: 2;
   width: 744px;
   height: 626px;
   overflow: hidden;
+  justify-self: stretch;
+}
+@media screen and (max-width: 900px) {
+  #AboutMe div {
+    grid-column: 1/2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: flex-start;
+  }
 }
 #AboutMe div img {
   display: block;
   margin: 0 auto;
   width: 70%;
 }
+@media screen and (max-width: 900px) {
+  #AboutMe div img {
+    width: 50%;
+  }
+}
 #AboutMe h2 {
   grid-row: 1/2;
-  grid-column: 2;
+  grid-column: 1;
+  justify-self: stretch;
   font-family: Grotesk;
   font-size: 25px;
+  width: 300px;
+}
+@media screen and (max-width: 900px) {
+  #AboutMe h2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }
 #AboutMe p {
   display: block;
-  grid-row: 2/3;
+  grid-row: 2;
+  grid-column: 1;
   font-family: Avenir;
-  font-size: 16px;
-  width: 70%;
+  font-size: 19px;
+  width: 350px;
+  align-self: stretch;
+}
+@media screen and (max-width: 900px) {
+  #AboutMe p {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 #AboutMe .ButtonSeeMore {
   grid-row: 3;
   grid-column: 2;
   font-family: Avenir;
   font-size: 16px;
+  padding: 15px;
+  border: solid #EF4142;
+  background-color: white;
+  border-radius: 1.25rem;
+}
+@media screen and (max-width: 900px) {
+  #AboutMe .ButtonSeeMore {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 
 #MyProjects .navProjet {
@@ -148,60 +287,37 @@ nav ul a {
 }
 #MyProjects .CardProjet {
   display: grid;
-  grid-template-rows: 0.2fr 0.2fr 0.4fr 0.4fr;
-  grid-template-columns: 0.5fr 0.5fr 0.1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 450px;
   font-family: Avenir;
   font-size: 16px;
   margin: 173px;
   border-radius: 1.25rem;
   background-color: whitesmoke;
   padding: 50px;
+  gap: 10px;
 }
 #MyProjects .CardProjet h2 {
   font-family: Grotesk;
   font-size: 20px;
-  grid-row: 1/3;
-  grid-column: 1/3;
+  grid-row: 1;
+  grid-column: 1;
   justify-items: center;
 }
 #MyProjects .CardProjet H3 {
-  grid-row: 2/3;
-  grid-column: 1/3;
+  grid-row: 2;
+  grid-column: 1;
 }
 #MyProjects .CardProjet p {
-  grid-column: 1/3;
-  grid-row: 3/4;
+  grid-column: 1;
+  grid-row: 4;
 }
-#MyProjects .CardProjet .Gallerie {
-  grid-column: 1/4;
-  grid-row: 4/4;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  gap: 50px;
-}
-#MyProjects .CardProjet .Gallerie img {
-  width: 40%;
+#MyProjects .CardProjet img {
+  width: 80%;
   border-radius: 1.25rem;
-}
-#MyProjects .CardProjet .button {
-  padding: 20px;
-  width: 74px;
-  height: 74px;
-  grid-column: 3/4;
-  grid-row: 1/2;
-  border-radius: 50%;
-  border-style: none;
-  font-family: Avenir;
-  font-size: 28px;
-  background-color: white;
-}
-
-footer {
-  height: 70px;
-  width: 100%;
+  grid-column: 2;
+  grid-row: 1/4;
 }
 
 #Contact {
@@ -210,6 +326,7 @@ footer {
 #Contact h2 {
   font-family: Avenir;
   font-size: 30px;
+  margin: 20px;
 }
 #Contact h2 span {
   color: #EF4142;
@@ -251,30 +368,13 @@ footer {
   nav ul {
     display: none;
   }
-  .responsive-menu-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 50px;
-    z-index: 2;
-    padding: 50px;
-  }
-  .responsive-menu-container ul {
-    z-index: 4;
-    padding: 50px;
-  }
-  .burgermenu {
-    z-index: 3;
-    width: 100%;
-    margin-top: 1000px;
-  }
   #AboutMe {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 0.2fr);
-    margin: 10px;
+    /*margin: 10px;*/
     padding: 10px;
-    width: 60%;
+    width: 100%;
   }
   #AboutMe h2,
 #AboutMe p,

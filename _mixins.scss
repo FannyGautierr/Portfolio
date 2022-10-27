@@ -1,0 +1,11 @@
+@mixin font($name,$size) {
+    font-family: $name;
+    font-size:$size;
+        
+}
+
+@mixin breakpoint($width){
+    @media screen and (max-width:$width) {
+       @content;
+    }
+}

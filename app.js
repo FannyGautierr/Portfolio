@@ -26,8 +26,28 @@ searchButton.addEventListener("click",() => {
 
 //menu burger
 
-let menuBurger = document.querySelector(".burgermenu");
-function displayBurgerMenu(){
-    
-}
+let menuBurger = document.querySelector(".burgermenu-icon");
+let menuBurgerContainer=document.querySelector(".responsive-menu-container");
+let navMenu=document.querySelector(".responsive-menu");
 
+let barreUne=document.querySelector(".une")
+let barreDeux=document.querySelector(".deux")
+let barreTrois=document.querySelector(".trois")
+
+menuBurger.addEventListener("click",()=>{
+   
+
+    barreDeux.classList.add("animation-deux")
+    barreUne.classList.add("animation-une")
+    barreTrois.classList.add("animation-trois")
+
+    menuBurgerContainer.classList.toggle("red-background")
+    navMenu.classList.toggle("display-flex")
+
+    barreDeux.classList.remove("animation-deux")
+    barreUne.classList.remove("animation-une")
+    barreTrois.classList.remove("animation-trois")
+  
+
+    }
+)
