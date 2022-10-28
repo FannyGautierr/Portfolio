@@ -6,7 +6,7 @@
 git clone git@github.com:FannyGautierr/Portfolio.git
 
 ```
-## How i deploy my website
+## Deployment
 
 To deploy my portfolio i use Vercel :
 
@@ -17,7 +17,7 @@ To deploy my portfolio i use Vercel :
 ### 3 - Now, the website is online ! 
 <img width="1512" alt="Capture d’écran 2022-10-28 à 15 36 59" src="https://user-images.githubusercontent.com/55425039/198615696-720a0238-53c6-4ece-82c7-bed42ec9a9a8.png" style="width:40%">
 
-## Actions i put in my repository
+## Actions 
 
 
 - ImgBot : ImgBot is here to compress the images you have in your GitHub Repos , it makes your website faster et lighter
