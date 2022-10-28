@@ -21,4 +21,4 @@ To deploy my portfolio i use Vercel :
 
 
 - ImgBot : ImgBot is here to compress the images you have in your GitHub Repos , it makes your website faster et lighter
-- 
+- CodeFactor : CodeFactor instantly performs Code Review with every GitHub Commit or PR. Zero setup time. Get actionable feedback within seconds. Customize rules, get refactoring tips and ignore irrelevant issues
