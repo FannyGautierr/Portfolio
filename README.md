@@ -2,10 +2,17 @@
 
 ## Setup the project 
 
+### Clone the project
 ```bash
 git clone git@github.com:FannyGautierr/Portfolio.git
 
 ```
+### Set up the scss
+
+```bash
+sass --watch style.scss:style.css
+```
+
 ## Deployment
 
 To deploy my portfolio i use Vercel :
