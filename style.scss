@@ -1,0 +1,384 @@
+@use 'mixins';
+@font-face {
+    font-family:Grotesk ;
+    src: url(fonts/DTGetaiGroteskDisplay-Black.otf);
+}
+
+$FirstFont:Grotesk;
+$SecondFont:Avenir;
+
+$FirstColor:whitesmoke;
+$SecondColor:black;
+
+
+// animation css
+
+@keyframes animationBurgerFirst {
+    100%{
+       transform:translateY(10px) rotate(45deg) ;
+    }
+    
+}
+@keyframes animationBurgerSecond {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes animationBurgerThree {
+    100%{
+        transform:translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type:mandatory;
+    transition: 2s ease-in-out;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+nav{
+    position:sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    background-color:#EF4142;
+   
+
+    h1{
+        justify-content: flex-start;
+        @include mixins.font($FirstFont,35px);
+        color :black;
+    }
+    ul{
+        display:flex;
+        flex-direction: row;
+        gap: 50px;
+        list-style: none;
+        
+        @include mixins.font($SecondFont,20px);
+
+        a{
+            text-decoration : none;
+            color: black;
+        }
+    }
+    
+}
+
+/*Classe ajouter en JS*/
+
+
+
+.responsive-menu-container{
+
+    display: none;
+    
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 900px;
+    background-color:rgba($color: #000000, $alpha: 0);
+    @include mixins.breakpoint(900px){
+    display: grid;
+    }
+
+    ul{
+        list-style: none;
+        @include mixins.font($FirstFont,40px)
+    }
+    .burgermenu-icon{ 
+      
+        grid-row: 1;
+        grid-column: 3;
+        height: fit-content;
+        width: fit-content;
+       
+        margin-top: -20px;
+        z-index:2;
+        display: none;
+       
+        
+        .burgermenu-bar{
+            position: relative;
+            height: 4px;
+            width: 25px;
+            background-color: black;
+            margin: 5px;
+
+        
+        }
+        .animation-une{
+            animation: animationBurgerFirst 1s forwards;
+        }
+        .animation-deux{
+            animation: animationBurgerSecond 1s forwards;
+        }
+        .animation-trois{
+            animation: animationBurgerThree 1s forwards;
+        }
+    }
+    .responsive-menu{
+    
+        grid-column: 2;
+        /*display: flex;*/
+        display: none;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .display-flex{
+        display: flex;
+        }
+
+    @include mixins.breakpoint(900px){
+        
+        gap: 50px;
+        z-index: 2;
+        width: 100%;
+    
+        padding: 20px;
+
+        ul{
+        z-index: 4;
+        padding: 50px;
+        }
+
+        .burgermenu-icon{
+             display: block;
+             margin-left: 50px;
+             z-index: 3;
+             width: 50%;
+          
+        }
+    }
+}
+.red-background{
+    background-color: #EF4142;
+    }
+
+#AboutMe{
+    display: flex;
+    margin: 0 auto;
+    min-height: 0px;
+    flex-direction: row-reverse;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+   
+    padding: 0px;
+   
+
+
+    
+    .texte-aboutme {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
+        height: 100%;
+        width: 100%;
+      
+       
+
+        @include mixins.breakpoint(900px){
+          align-items: center;
+          justify-content: center
+        }
+
+        h2{
+         
+           
+            @include mixins.font($FirstFont,25px );
+            height: fit-content;
+           
+        }
+        p{
+            
+            
+            @include mixins.font($SecondFont,19px);
+            width:350px;
+            @include mixins.breakpoint(900px){
+                
+            }
+           
+        }
+        .ButtonSeeMore{
+            
+            @include mixins.font($SecondFont,16px);
+            padding:15px;
+            border: solid #EF4142;
+            background-color: white;
+            border-radius: 1.25rem;
+            
+        }
+        
+    }
+    .photo-aboutme {
+       
+        object-fit: contain;
+        img{
+            display: block;
+            margin: 0 auto;
+            width:50%;
+            height: auto;
+            @include mixins.breakpoint(900px){
+                width: 40%;
+            }
+        }
+        
+
+    }
+    @include mixins.breakpoint(900px){
+   
+     width: fit-content;
+        
+        }
+        
+}
+
+#MyProjects{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .CardProjet{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+        @include mixins.font($SecondFont,16px);
+        margin: 20px;
+        border-radius:1.25rem;
+        background-color: whitesmoke;
+        padding:50px ;
+        gap: 10px;
+        
+        h2{
+            @include mixins.font($FirstFont,20px);
+          
+            
+        }
+       
+        img{
+            height: auto;
+            width: 60%;
+            border-radius: 1.25rem;
+        }
+           
+    }
+
+    @include mixins.breakpoint(900px){
+        #MyProjects{
+            width: 100%;
+            overflow: hidden;
+        }
+        .CardProjet{
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items:center ;
+            height: fit-content;
+            width: fit-content;
+            gap: 10px;
+        }
+    }
+}
+
+
+#Contact{
+
+    background-color: whitesmoke;
+    h2{
+        @include mixins.font($SecondFont,30px );
+        margin: 20px;
+        
+
+        span{
+            color: #EF4142;
+            @include mixins.font($FirstFont,30px );
+        }
+    }
+    .contact-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding:40px;
+        width:50%;
+        margin: 0 auto;
+    }
+    p{
+        @include mixins.font($SecondFont,25px );
+
+        
+    }
+    p::after{
+        position: relative;
+        content: "\27F6";
+        
+        vertical-align: center;
+        left: 20px;
+        
+        
+    }
+    ul{
+        list-style: none;
+        @include mixins.font($SecondFont,25px );
+    }
+
+}
+
+
+
+@media screen and (max-width: 800px) {
+  nav{
+    
+    position: relative;
+    justify-content: flex-end;
+    h1{
+        display: none;
+    }
+   
+    ul{
+        display: none;
+    }
+  }
+ 
+ 
+    #AboutMe{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,0.2fr);
+      
+        /*margin: 10px;*/
+        padding: 10px;
+       
+        width: 100%;
+        h2, 
+        p, 
+        div,.ButtonSeeMore{
+            grid-column: 1;
+        }
+    }
+
+  }

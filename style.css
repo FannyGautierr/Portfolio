@@ -64,7 +64,7 @@ nav {
   width: 100%;
   height: 100px;
   padding: 20px;
-  background-color: white;
+  background-color: #EF4142;
 }
 nav h1 {
   justify-content: flex-start;
@@ -112,7 +112,9 @@ nav ul a {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: -20px;
   z-index: 2;
   display: none;
@@ -161,7 +163,7 @@ nav ul a {
     display: block;
     margin-left: 50px;
     z-index: 3;
-    width: 100%;
+    width: 50%;
   }
 }
 
@@ -170,78 +172,44 @@ nav ul a {
 }
 
 #AboutMe {
-  display: grid;
+  display: flex;
   margin: 0 auto;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 0.4fr 1fr 0.5fr;
+  min-height: 0px;
+  flex-direction: row-reverse;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
   padding: 0px;
-  width: 60%;
+}
+#AboutMe .texte-aboutme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
 }
 @media screen and (max-width: 900px) {
-  #AboutMe {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
+  #AboutMe .texte-aboutme {
+    align-items: center;
+    justify-content: center;
   }
 }
-#AboutMe div {
-  grid-row: 1/3;
-  grid-column: 2;
-  width: 744px;
-  height: 626px;
-  overflow: hidden;
-  justify-self: stretch;
-}
-@media screen and (max-width: 900px) {
-  #AboutMe div {
-    grid-column: 1/2;
-    grid-row: 1;
-    justify-self: start;
-    align-self: flex-start;
-  }
-}
-#AboutMe div img {
-  display: block;
-  margin: 0 auto;
-  width: 70%;
-}
-@media screen and (max-width: 900px) {
-  #AboutMe div img {
-    width: 50%;
-  }
-}
-#AboutMe h2 {
-  grid-row: 1/2;
-  grid-column: 1;
-  justify-self: stretch;
+#AboutMe .texte-aboutme h2 {
   font-family: Grotesk;
   font-size: 25px;
-  width: 300px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-@media screen and (max-width: 900px) {
-  #AboutMe h2 {
-    grid-column: 1;
-    grid-row: 2;
-  }
-}
-#AboutMe p {
-  display: block;
-  grid-row: 2;
-  grid-column: 1;
+#AboutMe .texte-aboutme p {
   font-family: Avenir;
   font-size: 19px;
   width: 350px;
-  align-self: stretch;
 }
-@media screen and (max-width: 900px) {
-  #AboutMe p {
-    grid-column: 1;
-    grid-row: 3;
-  }
-}
-#AboutMe .ButtonSeeMore {
-  grid-row: 3;
-  grid-column: 2;
+#AboutMe .texte-aboutme .ButtonSeeMore {
   font-family: Avenir;
   font-size: 16px;
   padding: 15px;
@@ -249,50 +217,45 @@ nav ul a {
   background-color: white;
   border-radius: 1.25rem;
 }
+#AboutMe .photo-aboutme {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#AboutMe .photo-aboutme img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}
 @media screen and (max-width: 900px) {
-  #AboutMe .ButtonSeeMore {
-    grid-column: 1;
-    grid-row: 3;
+  #AboutMe .photo-aboutme img {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #AboutMe {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 
-#MyProjects .navProjet {
+#MyProjects {
+  padding: 0;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px;
-  padding: 20px;
-  background-color: whitesmoke;
-}
-#MyProjects .navProjet h2 {
-  font-family: Grotesk;
-  font-size: 25px;
-}
-#MyProjects .navProjet div {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-#MyProjects .navProjet img {
-  margin: 10px;
-  width: 5%;
+  flex-direction: column;
+  justify-content: center;
 }
 #MyProjects .CardProjet {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
   font-family: Avenir;
   font-size: 16px;
-  margin: 173px;
+  margin: 20px;
   border-radius: 1.25rem;
   background-color: whitesmoke;
   padding: 50px;
@@ -301,23 +264,29 @@ nav ul a {
 #MyProjects .CardProjet h2 {
   font-family: Grotesk;
   font-size: 20px;
-  grid-row: 1;
-  grid-column: 1;
-  justify-items: center;
-}
-#MyProjects .CardProjet H3 {
-  grid-row: 2;
-  grid-column: 1;
-}
-#MyProjects .CardProjet p {
-  grid-column: 1;
-  grid-row: 4;
 }
 #MyProjects .CardProjet img {
-  width: 80%;
+  height: auto;
+  width: 60%;
   border-radius: 1.25rem;
-  grid-column: 2;
-  grid-row: 1/4;
+}
+@media screen and (max-width: 900px) {
+  #MyProjects #MyProjects {
+    width: 100%;
+    overflow: hidden;
+  }
+  #MyProjects .CardProjet {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 10px;
+  }
 }
 
 #Contact {
