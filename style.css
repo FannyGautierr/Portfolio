@@ -267,12 +267,12 @@ nav ul a {
 
 .line {
   position: absolute;
-  margin-top: 268px;
   z-index: 0;
-  left: 50%;
+  left: 2%;
   width: 10px;
   height: 1500px;
   background-color: #EF4142;
+  border-radius: 40%;
 }
 
 #MyProjects {
@@ -313,6 +313,7 @@ nav ul a {
   font-family: Avenir;
   font-size: 16px;
   border-radius: 1.25rem;
+  background-color: whitesmoke;
   padding: 50px;
   gap: 50px;
   margin: 0 auto;
