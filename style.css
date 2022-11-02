@@ -56,7 +56,7 @@ nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -65,6 +65,7 @@ nav {
   height: 100px;
   padding: 20px;
   background-color: #EF4142;
+  box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 nav h1 {
   justify-content: flex-start;
@@ -116,7 +117,7 @@ nav ul a {
   width: -moz-fit-content;
   width: fit-content;
   margin-top: -20px;
-  z-index: 2;
+  z-index: 3;
   display: none;
 }
 .responsive-menu-container .burgermenu-icon .burgermenu-bar {
@@ -151,12 +152,12 @@ nav ul a {
 @media screen and (max-width: 900px) {
   .responsive-menu-container {
     gap: 50px;
-    z-index: 2;
+    z-index: 4;
     width: 100%;
     padding: 20px;
   }
   .responsive-menu-container ul {
-    z-index: 4;
+    z-index: 5;
     padding: 50px;
   }
   .responsive-menu-container .burgermenu-icon {
@@ -172,15 +173,18 @@ nav ul a {
 }
 
 #AboutMe {
+  position: relative;
+  background-color: white;
+  z-index: 2;
   display: flex;
   margin: 0 auto;
-  min-height: 0px;
   flex-direction: row-reverse;
   gap: 10px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin-top: 40px;
-  padding: 0px;
+  width: 80%;
+  margin-top: 90px;
+  padding-bottom: 150px;
 }
 #AboutMe .texte-aboutme {
   display: flex;
@@ -224,12 +228,12 @@ nav ul a {
 #AboutMe .photo-aboutme img {
   display: block;
   margin: 0 auto;
-  width: 50%;
+  width: 80%;
   height: auto;
 }
 @media screen and (max-width: 900px) {
   #AboutMe .photo-aboutme img {
-    width: 40%;
+    width: 60%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -240,40 +244,100 @@ nav ul a {
   }
 }
 
+#separateur {
+  position: absolute;
+  z-index: 1;
+  margin-left: 40%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+}
+#separateur img {
+  position: -webkit-sticky;
+  position: sticky;
+  transition: ease-in-out 2s;
+  width: 80%;
+}
+@media screen and (max-width: 900px) {
+  #separateur {
+    left: 25%;
+  }
+}
+
+.line {
+  position: absolute;
+  margin-top: 268px;
+  z-index: 0;
+  left: 50%;
+  width: 10px;
+  height: 1500px;
+  background-color: #EF4142;
+}
+
 #MyProjects {
+  position: relative;
+  margin-top: 450px;
+  z-index: 1;
   padding: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 50px;
+  margin-bottom: 100px;
+}
+#MyProjects h2 {
+  font-family: Grotesk;
+  font-size: 45px;
+  text-align: center;
+}
+#MyProjects a {
+  color: black;
+  text-decoration: none;
+}
+#MyProjects .gauche {
+  flex-direction: row;
+}
+#MyProjects .droite {
+  flex-direction: row-reverse;
 }
 #MyProjects .CardProjet {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 500px;
+  justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 80%;
   font-family: Avenir;
   font-size: 16px;
-  margin: 20px;
   border-radius: 1.25rem;
-  background-color: whitesmoke;
   padding: 50px;
-  gap: 10px;
-}
-#MyProjects .CardProjet h2 {
-  font-family: Grotesk;
-  font-size: 20px;
+  gap: 50px;
+  margin: 0 auto;
 }
 #MyProjects .CardProjet img {
   height: auto;
   width: 60%;
   border-radius: 1.25rem;
 }
+#MyProjects .CardProjet .texte-projet {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#MyProjects .CardProjet .texte-projet h2 {
+  font-family: Grotesk;
+  font-size: 20px;
+  color: black;
+}
+#MyProjects .CardProjet .texte-projet p {
+  line-height: 0.8cm;
+}
 @media screen and (max-width: 900px) {
   #MyProjects #MyProjects {
     width: 100%;
-    overflow: hidden;
   }
   #MyProjects .CardProjet {
     flex-direction: column;
