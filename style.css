@@ -52,6 +52,11 @@ html {
   box-sizing: border-box;
 }
 
+/*
+========================================================
+NAVBAR
+========================================================
+*/
 nav {
   position: -webkit-sticky;
   position: sticky;
@@ -87,13 +92,29 @@ nav ul a {
 }
 
 /*Classe ajouter en JS*/
+.animation-une {
+  -webkit-animation: animationBurgerFirst 1s forwards;
+          animation: animationBurgerFirst 1s forwards;
+}
+
+.animation-deux {
+  -webkit-animation: animationBurgerSecond 1s forwards;
+          animation: animationBurgerSecond 1s forwards;
+}
+
+.animation-trois {
+  -webkit-animation: animationBurgerThree 1s forwards;
+          animation: animationBurgerThree 1s forwards;
+}
+
+/**/
 .responsive-menu-container {
   display: none;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   position: absolute;
   top: 0;
-  width: 100%;
+  z-index: 4;
   height: 900px;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -116,32 +137,23 @@ nav ul a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-top: -20px;
+  padding: 13px;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 3;
   display: none;
+  justify-self: end;
 }
 .responsive-menu-container .burgermenu-icon .burgermenu-bar {
-  position: relative;
   height: 4px;
   width: 25px;
   background-color: black;
   margin: 5px;
 }
-.responsive-menu-container .burgermenu-icon .animation-une {
-  -webkit-animation: animationBurgerFirst 1s forwards;
-          animation: animationBurgerFirst 1s forwards;
-}
-.responsive-menu-container .burgermenu-icon .animation-deux {
-  -webkit-animation: animationBurgerSecond 1s forwards;
-          animation: animationBurgerSecond 1s forwards;
-}
-.responsive-menu-container .burgermenu-icon .animation-trois {
-  -webkit-animation: animationBurgerThree 1s forwards;
-          animation: animationBurgerThree 1s forwards;
-}
 .responsive-menu-container .responsive-menu {
   grid-column: 2;
   /*display: flex;*/
+  grid-row: 2/3;
   display: none;
   flex-direction: column;
   gap: 50px;
@@ -158,18 +170,17 @@ nav ul a {
   }
   .responsive-menu-container ul {
     z-index: 5;
-    padding: 50px;
+    padding: 20px;
   }
   .responsive-menu-container .burgermenu-icon {
     display: block;
-    margin-left: 50px;
     z-index: 3;
-    width: 50%;
   }
 }
 
 .red-background {
   background-color: #EF4142;
+  position: fixed;
 }
 
 #AboutMe {
@@ -245,39 +256,35 @@ nav ul a {
 }
 
 #separateur {
-  position: absolute;
+  display: flex;
   z-index: 1;
-  margin-left: 40%;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 #separateur img {
   position: -webkit-sticky;
   position: sticky;
-  transition: ease-in-out 2s;
-  width: 80%;
+  transition: ease-in-out 0.5s;
+  /*width: 80%;*/
 }
-@media screen and (max-width: 900px) {
-  #separateur {
-    left: 25%;
-  }
-}
-
-.line {
+.line-container {
   position: absolute;
-  z-index: 0;
-  left: 2%;
+  overflow: hidden;
+  height: 1290px;
   width: 10px;
-  height: 1500px;
+  left: 2%;
+}
+.line-container .line {
+  margin-top: 150px;
+  z-index: 0;
+  width: 10px;
+  height: 390px;
   background-color: #EF4142;
-  border-radius: 40%;
 }
 
 #MyProjects {
   position: relative;
-  margin-top: 450px;
   z-index: 1;
   padding: 0;
   width: 100%;
@@ -337,6 +344,11 @@ nav ul a {
   line-height: 0.8cm;
 }
 @media screen and (max-width: 900px) {
+  #MyProjects .CardProjet {
+    margin: 0px 20px 0px 20px;
+  }
+}
+@media screen and (max-width: 900px) {
   #MyProjects #MyProjects {
     width: 100%;
   }
@@ -394,10 +406,7 @@ nav ul a {
 @media screen and (max-width: 800px) {
   nav {
     position: relative;
-    justify-content: flex-end;
-  }
-  nav h1 {
-    display: none;
+    justify-content: flex-start;
   }
   nav ul {
     display: none;

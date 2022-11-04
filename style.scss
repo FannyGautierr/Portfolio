@@ -46,7 +46,11 @@ html{
     box-sizing: border-box;
     
 }
-
+/*
+========================================================
+NAVBAR
+========================================================
+*/
 nav{
     position:sticky;
     top: 0;
@@ -85,8 +89,18 @@ nav{
 }
 
 /*Classe ajouter en JS*/
+.animation-une{
+    animation: animationBurgerFirst 1s forwards;
+}
+.animation-deux{
+    animation: animationBurgerSecond 1s forwards;
+}
+.animation-trois{
+    animation: animationBurgerThree 1s forwards;
+}
 
 
+/**/
 
 .responsive-menu-container{
 
@@ -96,7 +110,7 @@ nav{
     grid-template-rows: 1fr 1fr 1fr 1fr;
     position: absolute;
     top: 0;
-    width: 100%;
+    z-index: 4;
     height: 900px;
     background-color:rgba($color: #000000, $alpha: 0);
     @include mixins.breakpoint(900px){
@@ -108,19 +122,21 @@ nav{
         @include mixins.font($FirstFont,40px)
     }
     .burgermenu-icon{ 
-      
+       
         grid-row: 1;
         grid-column: 3;
         height: fit-content;
         width: fit-content;
-       
-        margin-top: -20px;
+        padding: 13px;
+        object-fit: contain;
         z-index:3;
         display: none;
+        justify-self: end;
+      
        
         
         .burgermenu-bar{
-            position: relative;
+            
             height: 4px;
             width: 25px;
             background-color: black;
@@ -128,20 +144,13 @@ nav{
 
         
         }
-        .animation-une{
-            animation: animationBurgerFirst 1s forwards;
-        }
-        .animation-deux{
-            animation: animationBurgerSecond 1s forwards;
-        }
-        .animation-trois{
-            animation: animationBurgerThree 1s forwards;
-        }
+     
     }
     .responsive-menu{
     
         grid-column: 2;
         /*display: flex;*/
+        grid-row: 2/3;
         display: none;
         flex-direction: column;
         gap: 50px;
@@ -160,14 +169,15 @@ nav{
 
         ul{
         z-index: 5;
-        padding: 50px;
+        padding: 20px;
         }
 
         .burgermenu-icon{
              display: block;
-             margin-left: 50px;
+          
              z-index: 3;
-             width: 50%;
+             
+            
           
         }
     }
@@ -175,6 +185,7 @@ nav{
 }
 .red-background{
     background-color: #EF4142;
+    position: fixed;
     }
 
 #AboutMe{
@@ -262,38 +273,50 @@ nav{
 }
 
 #separateur{
-    position: absolute;
+    display: flex;
     z-index: 1;
-    margin-left: 40%;
-    width: fit-content;
-    height: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
     img{
         position: sticky;
-        transition: ease-in-out 2s;
-        width: 80%;
+        transition: ease-in-out 0.5s;
+        /*width: 80%;*/
     }
 
     @include mixins.breakpoint(900px){
-        left: 25%;
+        
+    }
+}
+
+.line-container{
+    position: absolute;
+    overflow: hidden;
+    height: 1290px;
+    width: 10px;
+    left: 2%;
+    .line{
+      
+        margin-top:150px;
+        z-index: 0;
+        
+        width: 10px;
+        height: 390px;
+        background-color: #EF4142;
+       
+       
+    
     }
 }
 
 
-.line{
-    position: absolute;
-  
-    z-index: 0;
-    left: 2%;
-    width: 10px;
-    height: 1500px;
-    background-color: #EF4142;
-    border-radius: 40%;
 
-}
+
+
 
 #MyProjects{
     position:relative;
-    margin-top: 450px;
     z-index: 1;
     padding: 0;
     width: 100%;
@@ -302,6 +325,7 @@ nav{
     justify-content: center;
     gap: 50px;
     margin-bottom: 100px;
+    
     h2{
         @include mixins.font($FirstFont,45px);
         text-align: center;
@@ -318,6 +342,7 @@ nav{
     .droite{
         flex-direction: row-reverse;
     }
+
     .CardProjet{
       
         display: flex;
@@ -332,28 +357,31 @@ nav{
         gap: 50px;
         margin: 0 auto;
      
-        img{
-            height: auto;
-            width: 60%;
-            border-radius: 1.25rem;
-        }
-       .texte-projet{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        h2{
-            @include mixins.font($FirstFont,20px);
-            color: $SecondColor;
-            
-            
-        }
-        p{
-            line-height: 0.8cm;
-        }
-       }
+            img{
+                height: auto;
+                width: 60%;
+                border-radius: 1.25rem;
+            }
+            .texte-projet{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                h2{
+                    @include mixins.font($FirstFont,20px);
+                    color: $SecondColor;
+                    
+                    
+                }
+                p{
+                    line-height: 0.8cm;
+                }
+
+            }
       
        
-       
+       @include mixins.breakpoint(900px){
+        margin: 0px 20px 0px 20px;
+       }
            
     }
 
@@ -422,10 +450,8 @@ nav{
   nav{
     
     position: relative;
-    justify-content: flex-end;
-    h1{
-        display: none;
-    }
+    justify-content: flex-start;
+  
    
     ul{
         display: none;
