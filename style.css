@@ -1,7 +1,8 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
 @font-face {
-  font-family: Grotesk;
-  src: url(fonts/DTGetaiGroteskDisplay-Black.otf);
+  font-family: Silka;
+  src: url(fonts/SilkaMono-Regular.otf);
 }
 @-webkit-keyframes animationBurgerFirst {
   100% {
@@ -39,11 +40,28 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+@-webkit-keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 76px;
+  }
+}
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 76px;
+  }
+}
 html {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: mandatory;
       scroll-snap-type: mandatory;
   transition: 2s ease-in-out;
+  background-color: #FFFEEF;
 }
 
 * {
@@ -69,29 +87,32 @@ nav {
   width: 100%;
   height: 100px;
   padding: 20px;
-  background-color: #EF4142;
-  box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: #FFFEEF;
 }
 nav h1 {
   justify-content: flex-start;
-  font-family: Grotesk;
+  font-family: Outfit;
   font-size: 35px;
-  color: black;
+  color: #201E1E;
 }
 nav ul {
   display: flex;
   flex-direction: row;
   gap: 50px;
   list-style: none;
-  font-family: Avenir;
-  font-size: 20px;
+  font-family: Silka;
+  font-size: 18px;
 }
 nav ul a {
   text-decoration: none;
   color: black;
 }
 
-/*Classe ajouter en JS*/
+/*
+========================================================
+CLASSE AJOUTER EN JS
+========================================================
+*/
 .animation-une {
   -webkit-animation: animationBurgerFirst 1s forwards;
           animation: animationBurgerFirst 1s forwards;
@@ -108,6 +129,11 @@ nav ul a {
 }
 
 /**/
+/*
+========================================================
+MENU BURGER
+========================================================
+*/
 .responsive-menu-container {
   display: none;
   grid-template-columns: 1fr 1fr 1fr;
@@ -125,7 +151,7 @@ nav ul a {
 }
 .responsive-menu-container ul {
   list-style: none;
-  font-family: Grotesk;
+  font-family: Silka;
   font-size: 40px;
 }
 .responsive-menu-container .burgermenu-icon {
@@ -183,9 +209,65 @@ nav ul a {
   position: fixed;
 }
 
+/*
+========================================================
+HEADER
+========================================================
+*/
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 20px;
+  margin: 0 auto;
+  width: 856px;
+  height: 798px;
+  padding: 20px;
+  background-image: url(img/background-portofolio.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-clip: padding-box;
+}
+@media screen and (max-width: 900px) {
+  #header {
+    width: 400px;
+  }
+}
+#header h2 {
+  font-family: Outfit;
+  font-size: 45px;
+}
+#header h3 {
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 100;
+}
+#header .loading-div {
+  width: 132px;
+  height: 16px;
+  background-color: #FAF3E1;
+  border: #201E1E solid 1px;
+}
+#header .loading-div .load {
+  width: 76px;
+  height: 16px;
+  background-color: #201E1E;
+  -webkit-animation: loading 2s forwards;
+          animation: loading 2s forwards;
+}
+
+/*
+========================================================
+SECTION A PROPOS
+========================================================
+*/
 #AboutMe {
   position: relative;
-  background-color: white;
   z-index: 2;
   display: flex;
   margin: 0 auto;
@@ -194,8 +276,10 @@ nav ul a {
   justify-content: space-around;
   align-items: center;
   width: 80%;
-  margin-top: 90px;
-  padding-bottom: 150px;
+  /* background-image: url(img/background-portfolio-second.png);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: left;*/
 }
 #AboutMe .texte-aboutme {
   display: flex;
@@ -213,19 +297,19 @@ nav ul a {
   }
 }
 #AboutMe .texte-aboutme h2 {
-  font-family: Grotesk;
+  font-family: Outfit;
   font-size: 25px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 #AboutMe .texte-aboutme p {
-  font-family: Avenir;
+  font-family: Silka;
   font-size: 19px;
   width: 350px;
 }
 #AboutMe .texte-aboutme .ButtonSeeMore {
-  font-family: Avenir;
+  font-family: Silka;
   font-size: 16px;
   padding: 15px;
   border: solid #EF4142;
@@ -255,34 +339,30 @@ nav ul a {
   }
 }
 
+/*
+========================================================
+OEIL
+========================================================
+*/
 #separateur {
   display: flex;
   z-index: 1;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 20px;
 }
 #separateur img {
   position: -webkit-sticky;
   position: sticky;
   transition: ease-in-out 0.5s;
-  /*width: 80%;*/
+  width: 20%;
 }
-.line-container {
-  position: absolute;
-  overflow: hidden;
-  height: 1290px;
-  width: 10px;
-  left: 2%;
-}
-.line-container .line {
-  margin-top: 150px;
-  z-index: 0;
-  width: 10px;
-  height: 390px;
-  background-color: #EF4142;
-}
-
+/*
+========================================================
+MES PROJETS
+========================================================
+*/
 #MyProjects {
   position: relative;
   z-index: 1;
@@ -295,7 +375,7 @@ nav ul a {
   margin-bottom: 100px;
 }
 #MyProjects h2 {
-  font-family: Grotesk;
+  font-family: Outfit;
   font-size: 45px;
   text-align: center;
 }
@@ -303,45 +383,105 @@ nav ul a {
   color: black;
   text-decoration: none;
 }
-#MyProjects .gauche {
-  flex-direction: row;
-}
-#MyProjects .droite {
-  flex-direction: row-reverse;
-}
 #MyProjects .CardProjet {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 441px;
   width: 80%;
-  font-family: Avenir;
+  font-family: Silka;
   font-size: 16px;
-  border-radius: 1.25rem;
-  background-color: whitesmoke;
-  padding: 50px;
-  gap: 50px;
+  background-color: #FAF3E1;
+  overflow: hidden;
+  gap: 20px;
   margin: 0 auto;
 }
-#MyProjects .CardProjet img {
-  height: auto;
-  width: 60%;
-  border-radius: 1.25rem;
+@media screen and (max-width: 900px) {
+  #MyProjects .CardProjet {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+  }
+}
+#MyProjects .CardProjet .gauche {
+  grid-column: 1;
+  grid-row: 1/2;
+}
+#MyProjects .CardProjet .droite {
+  grid-column: 2;
+  grid-row: 1/2;
+}
+#MyProjects .CardProjet .case-image {
+  align-self: stretch;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media screen and (max-width: 900px) {
+  #MyProjects .CardProjet .case-image {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+#MyProjects .CardProjet .owen {
+  background-image: url(img/photo-owen.png);
+}
+#MyProjects .CardProjet .kwi {
+  background-image: url(img/photo-kwi.png);
+}
+#MyProjects .CardProjet .scss {
+  background-image: url(img/photo-petiteceinture.png);
+}
+@media screen and (max-width: 900px) {
+  #MyProjects .CardProjet .scss {
+    grid-row: 1;
+    grid-column: 1;
+  }
 }
 #MyProjects .CardProjet .texte-projet {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 50px 0px 30px 10px;
+  gap: 60px;
+}
+@media screen and (max-width: 900px) {
+  #MyProjects .CardProjet .texte-projet {
+    grid-row: 2;
+    grid-column: 1;
+  }
 }
 #MyProjects .CardProjet .texte-projet h2 {
-  font-family: Grotesk;
-  font-size: 20px;
+  font-family: Outfit;
+  font-size: 22px;
   color: black;
 }
 #MyProjects .CardProjet .texte-projet p {
+  font-family: Silka;
+  font-size: 16px;
+  margin-top: 5px;
   line-height: 0.8cm;
+}
+#MyProjects .CardProjet .button-container {
+  font-family: Silka;
+  font-size: 16px;
+  background-color: #201E1E;
+  color: white;
+  width: 200px;
+  padding: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#MyProjects .CardProjet .button-container p {
+  text-align: center;
+}
+#MyProjects .CardProjet .button-container p::after {
+  position: relative;
+  left: 5px;
+  bottom: 3px;
+  content: "⟶";
+  color: #FFFEEF;
 }
 @media screen and (max-width: 900px) {
   #MyProjects .CardProjet {
@@ -366,43 +506,77 @@ nav ul a {
   }
 }
 
+/*
+========================================================
+CONTACT
+========================================================
+*/
 #Contact {
-  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFFEEF;
+}
+@media screen and (max-width: 900px) {
+  #Contact {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
 }
 #Contact h2 {
-  font-family: Avenir;
-  font-size: 30px;
-  margin: 20px;
+  font-family: Outfit;
+  font-size: 20px;
+  margin: 18px;
 }
 #Contact h2 span {
   color: #EF4142;
-  font-family: Grotesk;
-  font-size: 30px;
+  font-family: Silka;
+  font-size: 20px;
 }
-#Contact .contact-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 40px;
-  width: 50%;
-  margin: 0 auto;
+#Contact img {
+  width: 20%;
+}
+@media screen and (max-width: 900px) {
+  #Contact img {
+    width: 50%;
+  }
 }
 #Contact p {
-  font-family: Avenir;
-  font-size: 25px;
+  font-family: Silka;
+  font-size: 18px;
 }
 #Contact p::after {
   position: relative;
   content: "⟶";
-  vertical-align: center;
-  left: 20px;
 }
-#Contact ul {
+#Contact .container-contact {
+  display: flex;
+  gap: 20px;
+}
+#Contact .container-contact ul {
+  display: flex;
+  flex-direction: column;
   list-style: none;
-  font-family: Avenir;
-  font-size: 25px;
+  font-family: Silka;
+  font-size: 18px;
+}
+#Contact .container-contact ul a {
+  text-decoration: none;
+  color: #201E1E;
+}
+#Contact .container-contact ul img {
+  width: 80%;
+}
+#Contact .container-contact ul li:hover {
+  color: #EF4142;
 }
 
+/*
+========================================================
+RESPONSIVE
+========================================================
+*/
 @media screen and (max-width: 800px) {
   nav {
     position: relative;

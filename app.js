@@ -1,6 +1,11 @@
 "use strict"
 
-//menu burger
+/*
+===================================================
+MENU BURGER 
+-> animation des barres / apparation du fond rouge
+===================================================
+*/
 
 let menuBurger = document.querySelector(".burgermenu-icon");
 let menuBurgerContainer=document.querySelector(".responsive-menu-container");
@@ -16,7 +21,7 @@ menuBurger.addEventListener("click",()=>{
     barreDeux.classList.toggle("animation-deux")
     barreUne.classList.toggle("animation-une")
     barreTrois.classList.toggle("animation-trois")
-
+    
     menuBurgerContainer.classList.toggle("red-background")
     navMenu.classList.toggle("display-flex")
 
@@ -29,7 +34,11 @@ menuBurger.addEventListener("click",()=>{
 )
 
 
-// Aniamtion œil ouvert /fermer
+/*
+===================================================
+ANIMATION OEUIL + ANIMATION DE LA LIGNE PROJET 
+===================================================
+*/
 
 let height=0;
 window.addEventListener('scroll', function() {
@@ -38,11 +47,8 @@ window.addEventListener('scroll', function() {
 
 	var position = element.getBoundingClientRect();
 
-
-		console.log(position.top);
-
         if(position.top < -300 && position.top> -1700){
-            height+=8;
+            height+=5;
             console.log("che")
             document.querySelector(".oeil").src="img/oeil-ouvert.png"
             document.querySelector(".line").style.height = height + "px" ;
@@ -52,9 +58,9 @@ window.addEventListener('scroll', function() {
           
         
         
-        }else if(position.top > -300){
+        }else{
             document.querySelector(".oeil").src="img/oeil-ferme.png"
-            height-=5; 
+             
             document.querySelector(".line").style.height = height + "px" ;
 
         }
