@@ -42,6 +42,17 @@ $SecondColor:black;
         width: 76px;
   } 
 } 
+@keyframes  breath {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.9);
+    } 
+    100%{
+        transform: scale(1);
+    }
+  } 
 
 
 html{
@@ -96,6 +107,11 @@ nav{
             color: black;
         }
     }
+ 
+    @include mixins.breakpoint(900px){
+        position: static;
+        align-items: flex-end;
+    }
     
 }
 /*
@@ -135,11 +151,6 @@ MENU BURGER
     @include mixins.breakpoint(900px){
     display: grid;
     }
-
-    ul{
-        list-style: none;
-        @include mixins.font($SecondFont,40px)
-    }
     .burgermenu-icon{ 
        
         grid-row: 1;
@@ -148,7 +159,7 @@ MENU BURGER
         width: fit-content;
         padding: 13px;
         object-fit: contain;
-        z-index:3;
+        z-index:5;
         display: none;
         justify-self: end;
       
@@ -163,8 +174,23 @@ MENU BURGER
 
         
         }
+        @include mixins.breakpoint(900px){
+            display: block;
+           
+        }
      
     }
+
+    ul{
+        list-style: none;
+
+        a{
+            text-decoration : none;
+            color: black;
+        }
+        @include mixins.font($SecondFont,40px)
+    }
+ 
     .responsive-menu{
     
         grid-column: 2;
@@ -232,6 +258,7 @@ HEADER
     background-size:contain;
     background-position: center;
     background-clip: padding-box;
+   
 
     @include mixins.breakpoint(900px){
         width: 400px
@@ -252,7 +279,7 @@ HEADER
         border: #201E1E solid 1px;
         .load{
             width: 76px;
-            height: 16px;
+            height: 15px;
             background-color: #201E1E;
             animation: loading 2s forwards;
         }
@@ -278,13 +305,13 @@ SECTION A PROPOS
 
     flex-direction: row-reverse;
     gap: 10px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 80%;
-   /* background-image: url(img/background-portfolio-second.png);
+    background-image: url(img/background-portfolio-second.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: left;*/
+
    
     
    
@@ -296,10 +323,10 @@ SECTION A PROPOS
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
-      gap: 10px;
+        align-items: flex-end;
+        gap: 10px;
         height: 100%;
-        width: 100%;
+      
       
        
 
@@ -368,7 +395,7 @@ OEIL
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 50px;
    
     img{
         position: sticky;
@@ -395,7 +422,12 @@ MES PROJETS
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    margin-bottom: 100px;
+   padding-bottom: 190px;
+   margin: 10px;
+
+    background-image: url(img/background-portfolio-third.png);
+    background-repeat: repeat-y;
+    background-size: contain;
     
     h2{
         @include mixins.font($FirstFont,45px);
@@ -463,7 +495,7 @@ MES PROJETS
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin: 50px 0px 30px 10px;
+            margin: 50px 50px 0px 50px;
             gap: 60px;
             @include mixins.breakpoint(900px){
                 grid-row: 2;
@@ -491,20 +523,26 @@ MES PROJETS
             justify-content: center;
             align-items: center;
             p{
-                text-align: center;
+               
             }
             p::after{
                 position: relative;
-               left: 5px;
-               bottom: 3px;
+                left: 5px;
+                 bottom: 3px;
                 content: "\27F6";
                 color: #FFFEEF;
             }
-            
+            @include mixins.breakpoint(900px)
+                {
+                    margin: 10px 0px 20px 0px;
+                }
         }
+
+
+
        @include mixins.breakpoint(900px)
        {
-        margin: 0px 20px 0px 20px;
+       margin: 0px 10px 0px 10px;
        }
            
     }
@@ -540,6 +578,7 @@ CONTACT
     @include mixins.breakpoint(900px){
         flex-direction: column-reverse;
         gap: 20px;
+        height: calc(-50px)
         
     }
     h2{
@@ -600,7 +639,6 @@ RESPONSIVE
 @media screen and (max-width: 800px) {
   nav{
     
-    position: relative;
     justify-content: flex-start;
   
    
@@ -613,11 +651,9 @@ RESPONSIVE
     #AboutMe{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4,0.2fr);
-      
+        grid-template-rows: repeat(2,1fr);
         /*margin: 10px;*/
         padding: 10px;
-       
         width: 100%;
         h2, 
         p, 

@@ -56,6 +56,28 @@
     width: 76px;
   }
 }
+@-webkit-keyframes breath {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes breath {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 html {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: mandatory;
@@ -107,6 +129,12 @@ nav ul a {
   text-decoration: none;
   color: black;
 }
+@media screen and (max-width: 900px) {
+  nav {
+    position: static;
+    align-items: flex-end;
+  }
+}
 
 /*
 ========================================================
@@ -149,11 +177,6 @@ MENU BURGER
     display: grid;
   }
 }
-.responsive-menu-container ul {
-  list-style: none;
-  font-family: Silka;
-  font-size: 40px;
-}
 .responsive-menu-container .burgermenu-icon {
   grid-row: 1;
   grid-column: 3;
@@ -166,7 +189,7 @@ MENU BURGER
   padding: 13px;
   -o-object-fit: contain;
      object-fit: contain;
-  z-index: 3;
+  z-index: 5;
   display: none;
   justify-self: end;
 }
@@ -175,6 +198,20 @@ MENU BURGER
   width: 25px;
   background-color: black;
   margin: 5px;
+}
+@media screen and (max-width: 900px) {
+  .responsive-menu-container .burgermenu-icon {
+    display: block;
+  }
+}
+.responsive-menu-container ul {
+  list-style: none;
+  font-family: Silka;
+  font-size: 40px;
+}
+.responsive-menu-container ul a {
+  text-decoration: none;
+  color: black;
 }
 .responsive-menu-container .responsive-menu {
   grid-column: 2;
@@ -255,7 +292,7 @@ HEADER
 }
 #header .loading-div .load {
   width: 76px;
-  height: 16px;
+  height: 15px;
   background-color: #201E1E;
   -webkit-animation: loading 2s forwards;
           animation: loading 2s forwards;
@@ -273,22 +310,20 @@ SECTION A PROPOS
   margin: 0 auto;
   flex-direction: row-reverse;
   gap: 10px;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 80%;
-  /* background-image: url(img/background-portfolio-second.png);
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-position: left;*/
+  background-image: url(img/background-portfolio-second.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 #AboutMe .texte-aboutme {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 10px;
   height: 100%;
-  width: 100%;
 }
 @media screen and (max-width: 900px) {
   #AboutMe .texte-aboutme {
@@ -350,7 +385,7 @@ OEIL
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
+  margin-top: 50px;
 }
 #separateur img {
   position: -webkit-sticky;
@@ -372,7 +407,11 @@ MES PROJETS
   flex-direction: column;
   justify-content: center;
   gap: 50px;
-  margin-bottom: 100px;
+  padding-bottom: 190px;
+  margin: 10px;
+  background-image: url(img/background-portfolio-third.png);
+  background-repeat: repeat-y;
+  background-size: contain;
 }
 #MyProjects h2 {
   font-family: Outfit;
@@ -441,7 +480,7 @@ MES PROJETS
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 50px 0px 30px 10px;
+  margin: 50px 50px 0px 50px;
   gap: 60px;
 }
 @media screen and (max-width: 900px) {
@@ -473,9 +512,6 @@ MES PROJETS
   justify-content: center;
   align-items: center;
 }
-#MyProjects .CardProjet .button-container p {
-  text-align: center;
-}
 #MyProjects .CardProjet .button-container p::after {
   position: relative;
   left: 5px;
@@ -484,8 +520,13 @@ MES PROJETS
   color: #FFFEEF;
 }
 @media screen and (max-width: 900px) {
+  #MyProjects .CardProjet .button-container {
+    margin: 10px 0px 20px 0px;
+  }
+}
+@media screen and (max-width: 900px) {
   #MyProjects .CardProjet {
-    margin: 0px 20px 0px 20px;
+    margin: 0px 10px 0px 10px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -522,6 +563,7 @@ CONTACT
   #Contact {
     flex-direction: column-reverse;
     gap: 20px;
+    height: -50px;
   }
 }
 #Contact h2 {
@@ -579,7 +621,6 @@ RESPONSIVE
 */
 @media screen and (max-width: 800px) {
   nav {
-    position: relative;
     justify-content: flex-start;
   }
   nav ul {
@@ -588,7 +629,7 @@ RESPONSIVE
   #AboutMe {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 0.2fr);
+    grid-template-rows: repeat(2, 1fr);
     /*margin: 10px;*/
     padding: 10px;
     width: 100%;
