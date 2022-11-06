@@ -11,6 +11,14 @@ $SecondFont:Silka;
 $FirstColor:whitesmoke;
 $SecondColor:black;
 
+.visually-hidden{
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
 
 // animation css
 
@@ -165,9 +173,7 @@ MENU BURGER
         display: none;
         justify-self: end;
       
-        .visually-hidden{
-            text-indent: -10000px
-        }
+    
         
         .burgermenu-bar{
             
@@ -349,7 +355,7 @@ SECTION A PROPOS
         p{
             
             
-            @include mixins.font($SecondFont,19px);
+            @include mixins.font($SecondFont,24px);
             width:350px;
         
            

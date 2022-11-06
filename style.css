@@ -4,11 +4,21 @@
   font-family: Silka;
   src: url(fonts/SilkaMono-Regular.otf);
 }
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
 @-webkit-keyframes animationBurgerFirst {
   100% {
     transform: translateY(10px) rotate(45deg);
   }
 }
+
 @keyframes animationBurgerFirst {
   100% {
     transform: translateY(10px) rotate(45deg);
@@ -193,9 +203,6 @@ MENU BURGER
   display: none;
   justify-self: end;
 }
-.responsive-menu-container .burgermenu-icon .visually-hidden {
-  text-indent: -10000px;
-}
 .responsive-menu-container .burgermenu-icon .burgermenu-bar {
   height: 4px;
   width: 25px;
@@ -343,7 +350,7 @@ SECTION A PROPOS
 }
 #AboutMe .texte-aboutme p {
   font-family: Silka;
-  font-size: 19px;
+  font-size: 24px;
   width: 350px;
 }
 #AboutMe .texte-aboutme .ButtonSeeMore {
