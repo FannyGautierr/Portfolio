@@ -193,6 +193,9 @@ MENU BURGER
   display: none;
   justify-self: end;
 }
+.responsive-menu-container .burgermenu-icon .visually-hidden {
+  text-indent: -10000px;
+}
 .responsive-menu-container .burgermenu-icon .burgermenu-bar {
   height: 4px;
   width: 25px;

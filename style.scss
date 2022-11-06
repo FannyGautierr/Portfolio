@@ -152,6 +152,7 @@ MENU BURGER
     @include mixins.breakpoint(900px){
     display: grid;
     }
+ 
     .burgermenu-icon{ 
        
         grid-row: 1;
@@ -164,7 +165,9 @@ MENU BURGER
         display: none;
         justify-self: end;
       
-       
+        .visually-hidden{
+            text-indent: -10000px
+        }
         
         .burgermenu-bar{
             
