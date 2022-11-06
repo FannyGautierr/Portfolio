@@ -312,7 +312,7 @@ SECTION A PROPOS
   gap: 10px;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 60%;
   background-image: url(img/background-portfolio-second.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -524,15 +524,20 @@ MES PROJETS
     margin: 10px 0px 20px 0px;
   }
 }
+#MyProjects .CardProjet .button-container:hover {
+  border: 1px #201E1E solid;
+  background-color: transparent;
+  color: #201E1E;
+}
+#MyProjects .CardProjet .button-container:hover p::after {
+  color: #201E1E;
+}
 @media screen and (max-width: 900px) {
   #MyProjects .CardProjet {
     margin: 0px 10px 0px 10px;
   }
 }
 @media screen and (max-width: 900px) {
-  #MyProjects #MyProjects {
-    width: 100%;
-  }
   #MyProjects .CardProjet {
     flex-direction: column;
     justify-content: flex-start;
@@ -595,6 +600,7 @@ CONTACT
 #Contact .container-contact {
   display: flex;
   gap: 20px;
+  margin-top: 50px;
 }
 #Contact .container-contact ul {
   display: flex;
@@ -610,7 +616,7 @@ CONTACT
 #Contact .container-contact ul img {
   width: 80%;
 }
-#Contact .container-contact ul li:hover {
+#Contact .container-contact ul a:hover {
   color: #EF4142;
 }
 
@@ -619,7 +625,7 @@ CONTACT
 RESPONSIVE
 ========================================================
 */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   nav {
     justify-content: flex-start;
   }

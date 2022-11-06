@@ -1,10 +1,9 @@
 "use strict"
 
-/*
-===================================================
-MENU BURGER 
--> animation des barres / apparation du fond rouge
-===================================================
+/** 
+* MENU BURGER 
+* -> animation des barres + apparation du fond rouge
+
 */
 
 let menuBurger = document.querySelector(".burgermenu-icon");
@@ -16,25 +15,18 @@ let barreDeux=document.querySelector(".deux")
 let barreTrois=document.querySelector(".trois")
 
 menuBurger.addEventListener("click",()=>{
-   console.log("super")
-
     barreDeux.classList.toggle("animation-deux")
     barreUne.classList.toggle("animation-une")
     barreTrois.classList.toggle("animation-trois")
-    
     menuBurgerContainer.classList.toggle("red-background")
     navMenu.classList.toggle("display-flex")
-
-   /* barreDeux.classList.remove("animation-deux")
-    barreUne.classList.remove("animation-une")
-    barreTrois.classList.remove("animation-trois")*/
-  
-
     }
 )
-
+/** 
+* MENU BURGER 
+* Enleve le menu si on clique sur un des texte
+*/
 navMenu.addEventListener("click",()=>{
-
     barreDeux.classList.toggle("animation-deux")
     barreUne.classList.toggle("animation-une")
     barreTrois.classList.toggle("animation-trois")
@@ -43,29 +35,22 @@ navMenu.addEventListener("click",()=>{
     navMenu.classList.toggle("display-flex")
 })
 
-/*
-===================================================
-ANIMATION OEUIL + ANIMATION DE LA LIGNE PROJET 
-===================================================
+/** 
+* ANIMATION DE L'OEIL
+* ouver et ferme l'oeil en fonction du scroll de la page
 */
 
-let height=0;
 window.addEventListener('scroll', function() {
 	var element = document.querySelector('#AboutMe');
 	var position = element.getBoundingClientRect();
-
         if(position.top < -150 ){        
             document.querySelector(".oeil").src="img/oeil-ouvert.png"
 
         }else{
             document.querySelector(".oeil").src="img/oeil-ferme.png"
-             
-
-
         }
-	
 });
 
-// Animation line project 
+
 
 
