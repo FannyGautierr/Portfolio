@@ -412,7 +412,7 @@ MES PROJETS
   position: relative;
   z-index: 1;
   padding: 0;
-  width: 100%;
+  /*width: 100%;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -448,7 +448,6 @@ MES PROJETS
   #MyProjects .CardProjet {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    width: 100%;
   }
 }
 #MyProjects .CardProjet .gauche {
