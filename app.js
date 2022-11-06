@@ -44,10 +44,10 @@ window.addEventListener('scroll', function() {
 	var element = document.querySelector('#AboutMe');
 	var position = element.getBoundingClientRect();
         if(position.top < -150 ){        
-            document.querySelector(".oeil").src="img/oeil-ouvert.png"
+            document.querySelector(".oeil").src="img/oeil-ouvert.webp"
 
         }else{
-            document.querySelector(".oeil").src="img/oeil-ferme.png"
+            document.querySelector(".oeil").src="img/oeil-ferme.webp"
         }
 });
 

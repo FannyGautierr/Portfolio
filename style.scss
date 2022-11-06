@@ -254,7 +254,7 @@ HEADER
     width: 856px;
     height: 798px;
     padding: 20px;
-    background-image: url(img/background-portofolio.png);
+    background-image: url(img/background-portofolio.webp);
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center;
@@ -309,7 +309,7 @@ SECTION A PROPOS
     justify-content: space-between;
     align-items: center;
     width: 60%;
-    background-image: url(img/background-portfolio-second.png);
+    background-image: url(img/background-portfolio-second.webp);
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -426,7 +426,7 @@ MES PROJETS
    padding-bottom: 190px;
    margin: 10px;
 
-    background-image: url(img/background-portfolio-third.png);
+    background-image: url(img/background-portfolio-third.webp);
     background-repeat: repeat-y;
     background-size: contain;
     
@@ -479,13 +479,13 @@ MES PROJETS
            
         }
         .owen{
-            background-image: url(img/photo-owen.png);
+            background-image: url(img/photo-owen.webp);
         }
         .kwi{
-            background-image: url(img/photo-kwi.png);
+            background-image: url(img/photo-kwi.webp);
         }
         .scss{
-            background-image: url(img/photo-petiteceinture.png);
+            background-image: url(img/photo-petiteceinture.webp);
             @include mixins.breakpoint(900px){
                 grid-row: 1;
                 grid-column: 1;

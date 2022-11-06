@@ -264,7 +264,7 @@ HEADER
   width: 856px;
   height: 798px;
   padding: 20px;
-  background-image: url(img/background-portofolio.png);
+  background-image: url(img/background-portofolio.webp);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -313,7 +313,7 @@ SECTION A PROPOS
   justify-content: space-between;
   align-items: center;
   width: 60%;
-  background-image: url(img/background-portfolio-second.png);
+  background-image: url(img/background-portfolio-second.webp);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -409,7 +409,7 @@ MES PROJETS
   gap: 50px;
   padding-bottom: 190px;
   margin: 10px;
-  background-image: url(img/background-portfolio-third.png);
+  background-image: url(img/background-portfolio-third.webp);
   background-repeat: repeat-y;
   background-size: contain;
 }
@@ -462,13 +462,13 @@ MES PROJETS
   }
 }
 #MyProjects .CardProjet .owen {
-  background-image: url(img/photo-owen.png);
+  background-image: url(img/photo-owen.webp);
 }
 #MyProjects .CardProjet .kwi {
-  background-image: url(img/photo-kwi.png);
+  background-image: url(img/photo-kwi.webp);
 }
 #MyProjects .CardProjet .scss {
-  background-image: url(img/photo-petiteceinture.png);
+  background-image: url(img/photo-petiteceinture.webp);
 }
 @media screen and (max-width: 900px) {
   #MyProjects .CardProjet .scss {
