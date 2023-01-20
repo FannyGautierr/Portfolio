@@ -436,6 +436,9 @@ MES PROJETS
   background-image: url(img/photo-Ecologica.png);
   background-position: left;
 }
+#MyProjects .CardProjet .back {
+  background-image: url(img/Photo_devlabback.png);
+}
 #MyProjects .CardProjet .texte-projet {
   display: flex;
   flex-direction: column;

@@ -432,8 +432,8 @@ MES PROJETS
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-   padding-bottom: 190px;
-   margin: 10px;
+    padding-bottom: 190px;
+    margin: 10px;
 
     background-image: url(img/background-portfolio-third.webp);
     background-repeat: repeat-y;
@@ -508,6 +508,11 @@ MES PROJETS
         .wordpress{
             background-image: url(img/photo-Ecologica.png);
            background-position: left;
+        }
+
+        .back{
+            background-image: url(img/Photo_devlabback.png);
+
         }
            
         .texte-projet{
