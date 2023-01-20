@@ -13,23 +13,9 @@
   overflow: hidden;
 }
 
-@-webkit-keyframes animationBurgerFirst {
-  100% {
-    transform: translateY(10px) rotate(45deg);
-  }
-}
-
 @keyframes animationBurgerFirst {
   100% {
     transform: translateY(10px) rotate(45deg);
-  }
-}
-@-webkit-keyframes animationBurgerSecond {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes animationBurgerSecond {
@@ -40,22 +26,9 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes animationBurgerThree {
-  100% {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-}
 @keyframes animationBurgerThree {
   100% {
     transform: translateY(-8px) rotate(-45deg);
-  }
-}
-@-webkit-keyframes loading {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 76px;
   }
 }
 @keyframes loading {
@@ -64,17 +37,6 @@
   }
   100% {
     width: 76px;
-  }
-}
-@-webkit-keyframes breath {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 @keyframes breath {
@@ -90,8 +52,7 @@
 }
 html {
   scroll-behavior: smooth;
-  -ms-scroll-snap-type: mandatory;
-      scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory;
   transition: 2s ease-in-out;
   background-color: #FFFEEF;
 }
@@ -108,7 +69,6 @@ NAVBAR
 ========================================================
 */
 nav {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 3;
@@ -152,18 +112,15 @@ CLASSE AJOUTER EN JS
 ========================================================
 */
 .animation-une {
-  -webkit-animation: animationBurgerFirst 1s forwards;
-          animation: animationBurgerFirst 1s forwards;
+  animation: animationBurgerFirst 1s forwards;
 }
 
 .animation-deux {
-  -webkit-animation: animationBurgerSecond 1s forwards;
-          animation: animationBurgerSecond 1s forwards;
+  animation: animationBurgerSecond 1s forwards;
 }
 
 .animation-trois {
-  -webkit-animation: animationBurgerThree 1s forwards;
-          animation: animationBurgerThree 1s forwards;
+  animation: animationBurgerThree 1s forwards;
 }
 
 /**/
@@ -190,15 +147,10 @@ MENU BURGER
 .responsive-menu-container .burgermenu-icon {
   grid-row: 1;
   grid-column: 3;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 13px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   z-index: 5;
   display: none;
   justify-self: end;
@@ -266,8 +218,6 @@ HEADER
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   gap: 20px;
   margin: 0 auto;
@@ -304,8 +254,7 @@ HEADER
   width: 76px;
   height: 15px;
   background-color: #201E1E;
-  -webkit-animation: loading 2s forwards;
-          animation: loading 2s forwards;
+  animation: loading 2s forwards;
 }
 
 /*
@@ -344,8 +293,6 @@ SECTION A PROPOS
 #AboutMe .texte-aboutme h2 {
   font-family: Outfit;
   font-size: 25px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
 }
 #AboutMe .texte-aboutme p {
@@ -362,8 +309,7 @@ SECTION A PROPOS
   border-radius: 1.25rem;
 }
 #AboutMe .photo-aboutme {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 #AboutMe .photo-aboutme img {
   display: block;
@@ -378,8 +324,6 @@ SECTION A PROPOS
 }
 @media screen and (max-width: 900px) {
   #AboutMe {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -398,7 +342,6 @@ OEIL
   margin-top: 50px;
 }
 #separateur img {
-  position: -webkit-sticky;
   position: sticky;
   transition: ease-in-out 0.5s;
   width: 20%;
@@ -448,6 +391,7 @@ MES PROJETS
   #MyProjects .CardProjet {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    width: 100%;
   }
 }
 #MyProjects .CardProjet .gauche {
@@ -484,6 +428,13 @@ MES PROJETS
     grid-row: 1;
     grid-column: 1;
   }
+}
+#MyProjects .CardProjet .vue {
+  background-image: url(img/vueApp.png);
+}
+#MyProjects .CardProjet .wordpress {
+  background-image: url(img/photo-Ecologica.png);
+  background-position: left;
 }
 #MyProjects .CardProjet .texte-projet {
   display: flex;
@@ -551,11 +502,7 @@ MES PROJETS
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
     gap: 10px;
   }
@@ -654,4 +601,6 @@ RESPONSIVE
 #AboutMe div, #AboutMe .ButtonSeeMore {
     grid-column: 1;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
