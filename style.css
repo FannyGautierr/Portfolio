@@ -430,7 +430,7 @@ MES PROJETS
   }
 }
 #MyProjects .CardProjet .vue {
-  background-image: url(img/vueApp.png);
+  background-image: url(img/photo-vue-app.png);
 }
 #MyProjects .CardProjet .wordpress {
   background-image: url(img/photo-Ecologica.png);
@@ -560,6 +560,7 @@ CONTACT
   display: flex;
   gap: 20px;
   margin-top: 50px;
+  padding-bottom: 10px;
 }
 #Contact .container-contact ul {
   display: flex;
