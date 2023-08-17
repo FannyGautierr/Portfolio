@@ -263,13 +263,22 @@ HEADER
     width: 856px;
     height: 798px;
     padding: 20px;
-    background-image: url(img/background-portofolio.webp);
+   // background-image: url(img/background-portofolio.webp);
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center;
     background-clip: padding-box;
    
+    .spline{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: -1;
+        object-fit: cover;
 
+    }
     @include mixins.breakpoint(900px){
         width: 400px
     }
